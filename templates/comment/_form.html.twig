@@ -1,0 +1,16 @@
+{{ form_start(form) }}
+    <div class="form-group">{{ form_row(form.email, {'attr': {'class':'form-control'}}) }}</div>
+    <div class="form-group">{{ form_row(form.pseudo, {'attr': {'class':'form-control'}}) }}</div>
+    <div class="form-group">{{ form_row(form.content, {'attr': {'class':'form-control'}}) }}</div>
+    <div class="form-group ml-4">{{ form_widget(form.rgpd, {'attr': {'class':'form-check-input'}}) }}
+        <label for="comment_rgpd" class="required"> I agree Terms</label>
+    </div>
+    {{ form_rest(form) }}
+    <button class="btn btn-primary btn-block">{{ button_label|default('Commenter') }}</button>
+{{ form_end(form) }}
+{# <form method="POST" action='{{path("article_add_comment", {"id": article})}}'>
+    <div class="form-group"><label>Email *</label><input class="form-control" type="email" name="email"></div>
+    <div class="form-group"><label>Pseudo</label><input class="form-control" type="text" name="pseudo"></div>
+    <div class="form-group"><label>Message *</label><textarea class="form-control" name="content"></textarea></div>
+    <div class="form-group"><button class="btn btn-primary btn-block" type="submit" name="add_comment">Send</button></div>
+</form> #}

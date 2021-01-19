@@ -1,0 +1,40 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Article{% endblock %}
+
+{% block main %}
+
+
+    <main class="page blog-post">
+        <section class="clean-block clean-post dark">
+            <div class="container">
+                <div class="block-content">
+                    <div class="post-image" style="background-image:url(&quot; {{asset(article.image)}} &quot;);"></div>
+                    <div class="post-body">
+                        <h3>{{article.titre}}</h3>
+                        <div class="post-info"><span>by {{article.User.pseudo}}</span><span>{{article.createdAt|date('D d F Y')}}</span></div>
+                        {{ article.content|raw }}
+                        <hr>
+                        {{article.reacts.likes }}
+                    <p class="text-center">Partager cet article sur les réseaux</p>
+
+                    </div>
+                </div>
+                <div class="block-content mt-2 p-5">
+                    Vous aimeré aussi :
+                    <img src="{{asset(article.image)}}">
+                </div>
+                <div class="block-content mt-2 p-4">
+                    Commenter cet article:
+                    {{ include ("comment/_form.html.twig", {article: article.id, form: comment_form} )   }}
+                     <hr>
+                     la liste des commentaires ^récendents:
+                     {% for comment in article.comments %}
+                        {{ include ("comment/_show.html.twig", {article: article.id})   }}
+                     {% endfor %}
+                </div>
+            </div>
+        </section>
+    </main>
+ 
+{% endblock %}

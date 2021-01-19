@@ -1,0 +1,17 @@
+<div class="row mt-2 alert alert-info " border-color='black'>
+    <div class="col-md-3">
+        <img src="">
+    </div>
+    <div class="col-md-8">
+        <div class="row">
+            <small>
+                <span> {{comment.createdAt|date("d/m/y")}}</span> by
+                <span> {{comment.pseudo}}</span>
+            </small>
+        </div>
+        <hr>
+        <div class="row">
+            {{comment.content|raw}}
+        </div>
+    </div>
+</div>

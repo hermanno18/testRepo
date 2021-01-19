@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New Article{% endblock %}
+
+{% block main %}
+    <main class="page login-page">
+        <section class="clean-block clean-form dark">
+            <div class="container">
+                <div class="block-heading">
+                    <h2 class="text-info">Crer un nouvel article</h2>
+                </div>
+                {{ include('article/_form.html.twig') }}
+            </div>
+        </section>
+    </main>
+
+{% endblock %}

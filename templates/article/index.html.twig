@@ -1,0 +1,45 @@
+{% extends "base.html.twig" %}
+{% block title %} Blog -monSite{% endblock %}
+{% block main %}
+    <main class="page blog-post-list">
+        <section class="clean-block clean-blog-list dark">
+            <div class="container">
+                <div class="block-heading">
+                    <h2 class="text-info">Actualités !</h2>
+                    <p>Découvrez tous mes articles : </p>
+                </div>
+                <div class="block-content">
+                    {% for article in articles %}
+                        <div class="clean-blog-post">
+                            <div class="row">
+                                <div class="col-lg-5">
+                                    <img class="rounded img-fluid" src="{{asset(featured_image_path ~ article.featuredImage)}}">
+                                </div>
+                                <div class="col-lg-7">
+                                    <h3>{{article.titre}}</h3>
+                                    <div class="info">
+                                        <span class="text-muted"> 
+                                            {{article.createdAt|date("d/m/Y")}} by&nbsp;
+                                            <a href="#">
+                                                {{article.User.pseudo}}
+                                            </a>
+                                        </span>
+                                    </div>
+                                    <p>
+                                        {{article.content [:300]|raw }}...
+                                    </p>
+                                    <a href="{{ path('article_show', {'id': article.id})}}" class="btn btn-outline-primary btn-sm" type="button">Lire plus </a>
+                                    <div class="row">
+                                        <div class="col-md-2"><i>dfdkfb vues</i></div>
+                                        <div class="col-md-2"><i>dfdkfb vues</i></div>
+                                        <div class="col-md-4"> <i>dfdkfb vues</i></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </section>
+    </main>
+{% endblock %}

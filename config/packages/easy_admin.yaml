@@ -1,0 +1,15 @@
+easy_admin:
+    design:
+        assets:
+            js:
+                - '/bundles/cksourceckfinder/ckfinder/ckfinder.js'
+                - '/js/setup-ckfinder.js'
+
+    # entities:
+    #     Article:
+    #         class: App\Entity\Article
+    #         label: Article
+    #         form:
+    #             fields:
+    #                 - title
+    #                 - { property: 'content', type: 'fos_ckeditor'}
