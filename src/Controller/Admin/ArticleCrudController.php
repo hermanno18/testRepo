@@ -69,7 +69,7 @@ class ArticleCrudController extends AbstractCrudController
             }
 
             yield ArrayField::new('commentsqdc', 'Commentaires')->onlyOnIndex();
-            yield NumberField::new('reacts', 'reactions')->onlyOnIndex();
+            // yield NumberField::new('reacts', 'reactions')->onlyOnIndex();
             
 
     }

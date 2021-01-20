@@ -21,11 +21,24 @@
                     </div>
                 </div>
                 <div class="block-content mt-2 p-5">
-                    Vous aimeré aussi :
-                    <img src="{{asset(article.image)}}">
+                    <div class="text-center mb-5"> <h2>Vous aimeré aussi :</h2></div>
+                    <div class="row">
+                        <div class="col-md-4">
+                                <img src="{{asset(article.image)}}" style="width: 100%; height:80%; ">
+                            <p> {{article.titre}} </p>
+                        </div>
+                        <div class="col-md-4">
+                                <img src="{{asset(article.image)}}" style="width: 100%; height:80%; ">
+                            <p> {{article.titre}} </p>
+                        </div>
+                        <div class="col-md-4">
+                                <img src="{{asset(article.image)}}" style="width: 100%; height:80%; ">
+                            <p> {{article.titre}} </p>
+                        </div>
+                    </div>
                 </div>
                 <div class="block-content mt-2 p-4">
-                    Commenter cet article:
+                    <div class="text-center mb-5"> <h2>Vous aimeré aussi :</h2></div>
                     {{ include ("comment/_form.html.twig", {article: article.id, form: comment_form} )   }}
                      <hr>
                      la liste des commentaires ^récendents:
